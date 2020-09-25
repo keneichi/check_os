@@ -5,7 +5,8 @@ import urllib.request
 import json
 import re
 
-url = 'https://srvinstallation.tranquil.it/os-version.json'
+#insert the url of your web server as well as the path of your file
+url = 'https://your_http_server/os-version.json'
 
 if distro.id() == 'debian':
     with urllib.request.urlopen(url) as os_vers:
