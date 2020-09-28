@@ -1,6 +1,7 @@
 # check_os
 
 =FRENCH=
+
 ==Description==
 
 Ces scripts visent à
@@ -29,6 +30,7 @@ Installer distro
 
 
 =ENGLISH=
+
 ==Description==
 
 With this scripts you can 
