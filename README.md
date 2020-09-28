@@ -13,6 +13,7 @@ Pour la version des OS, on utilise un fichier json stocké sur un serveur web. C
 =Usage=
 
 Installer les dépendances nécessaires 
+
  apt install python3 python3-pip 
  pip3 install distro
 
