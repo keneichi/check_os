@@ -23,6 +23,10 @@ if distro.id() == 'debian':
         elif float(debian_version) <= float(data['debian_oldold_stable']):
             print("Your Debian installation is very old. An upgrade is urgently needed.")
             sys.exit(2)
+        elif float(debian_version) > float(data['debian_last_major_update']):
+            print("Your Debian version (" + debian_version+ ") is more recent than expected in os-version file. Please update the os-version file.")
+            sys.exit(1)
+
         else:
             print("Your Debian version (" + debian_version+ ") is the latest one and up to date. All OK")
             sys.exit(0)
