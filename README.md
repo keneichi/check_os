@@ -1,9 +1,8 @@
 # check_os
 
-=FRENCH=
+##FRENCH
 
-==Description==
-
+### Description
 Ces scripts visent à
 
 * Valider l’architecture 64bits
@@ -12,13 +11,12 @@ Ces scripts visent à
 
 Pour la version des OS, on utilise un fichier json stocké sur un serveur web. C’est ce fichier qu’il faut mettre à jour lorsqu’une nouvelle version d’OS est publiée
 
-==Usage==
+### Usage
 
-Installer les dépendances nécessaires 
-
+#### Installer les dépendances nécessaires 
  apt install python3 python3-pip 
  
-Installer distro 
+#### Installer distro 
  pip3 install distro
 
 * Copier les scripts .py dans /opt/scripts/ 
@@ -29,10 +27,9 @@ Installer distro
 
 
 
-=ENGLISH=
+## ENGLISH=
 
-==Description==
-
+### Description
 With this scripts you can 
 
  * Check if your OS is a 32 or 64bits
@@ -42,13 +39,12 @@ With this scripts you can
 For the OS version use the .json file on a web server. You have to update this file when a new version of an OS is released.
 
 
-==Usage==
+### Usage
 
-Install the dependencies
-
+#### Install the dependencies
  apt install python3 python3-pip
  
-Install distro 
+#### Install distro 
  pip3 install distro
 
 * Copy scripts .py into /opt/scripts/ folder
