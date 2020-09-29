@@ -1,6 +1,6 @@
 # check_os
 
-##FRENCH
+## FRENCH
 
 ### Description
 Ces scripts visent à
