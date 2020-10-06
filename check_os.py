@@ -35,15 +35,15 @@ elif distro.id() == 'centos' :
     with urllib.request.urlopen(url) as os_vers:
         data = json.load(os_vers)
 
-        if int(data['centos_critical']) <= int(distro.version()) < int(data['centos_stable']):
-            print("Your CentOS version ("+ int(distro.version())+ ") is old. An upgrade is needed. ")
+        if int(data['centos_critical']) <= int(distro.version()) < int(data['centos_last']):
+            print("Your CentOS version ("+ distro.version()+ ") is old. An upgrade is needed. ")
             sys.exit(1)
         else:
             if int(distro.version()) < int(data['centos_critical']):
-                print("Your CentOS version ("+ int(distro.version())+ ") is very old. An upgrade is needed." )
+                print("Your CentOS version ("+ distro.version()+ ") is very old. An upgrade is needed." )
                 sys.exit(2)
             else:
-                print("Your CentOS version ("+ int(distro.version())+ ") is the latest. All OK.")
+                print("Your CentOS version ("+ distro.version()+ ") is the latest. All OK.")
                 sys.exit(0)
 
 elif distro.id() == 'ubuntu' :
@@ -51,7 +51,7 @@ elif distro.id() == 'ubuntu' :
         data = json.loads(os_vers.read().decode('utf-8'))
     with open('/etc/issue.net') as ubuntu:
 
-        if 18.04 <= float(distro.version()) < float(data['ubuntu_stable_release']) :
+        if 18.04 <= float(distro.version()) < float(data['ubuntu_major_release']) :
             print("Your Ubuntu version (" + ubuntu.read().strip()[7:-4]+ ") is old. An upgrade is needed. ")
             sys.exit(1)
         else:
@@ -59,7 +59,7 @@ elif distro.id() == 'ubuntu' :
                 print("Your Ubuntu version (" + ubuntu.read().strip()[7:-4]+ ") is very old. An upgrade is needed." )
                 sys.exit(2)
             else:
-                if int(ubuntu.read().strip()[12:-4]) < int(data['ubuntu_last_stable_update']):
+                if int(ubuntu.read().strip()[13:-4]) < int(data['ubuntu_last_major_update']):
                     print("Your ubuntu version (" + ubuntu.read().strip()[7:-6]+ ") is the latest, but an upgrade is needed.")
                     sys.exit(1)
                 else:
@@ -68,3 +68,4 @@ elif distro.id() == 'ubuntu' :
 else:
     print("unkown OS")
     sys.exit(3)
+
