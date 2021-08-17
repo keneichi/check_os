@@ -20,6 +20,9 @@ if distro.id() == 'debian':
         if int(current_release) < int(data['debian_old_stable']):
             print("Your Debian installation is very old. An upgrade is urgently needed.")
             sys.exit(2)
+        elif int(current_release) > int(data['debian_major_release']):
+            print("Your Debian version (" + debian_version+ ") is more recent than expected in os-version file. Please update the os-version file.")
+            sys.exit(1)
         elif int(current_release) < int(data['debian_major_release']):
             print("Your Debian (" + debian_version+ ") needs to switch to the last stable release. ")
             sys.exit(1)
